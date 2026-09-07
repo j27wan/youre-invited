@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="envlope-wrapper">
-      <div id="envelope" class="close">
+    <div class="envelope-wrapper">
+      <div id="envelope" class="close" role="button" tabindex="0" aria-label="Open birthday invitation" aria-expanded="false">
         <div class="front flap"></div>
         <div class="front pocket"></div>
         <div class="letter">
-          <div class="words line2">You're invited</div>
-          <div class="words line3">to celebrate my 30th birthday!</div>
+          <div class="words line2">You're invited...</div>
+          <!-- <div class="words line3">to celebrate my 30th birthday!</div> -->
         </div>
         <div class="hearts">
           <div class="confetti a1"></div>
@@ -28,6 +28,27 @@
         </div>
       </div>
     </div>
+    <main id="invitation" class="invitation" aria-hidden="true">
+      <div class="invitation-card">
+        <p class="eyebrow">Save the date</p>
+        <h1>Birthday<br /><span>celebration</span></h1>
+        <p class="invitation-intro">A little party, a lot of cake, and the people who make life worth celebrating.</p>
+        <div class="event-details">
+          <div>
+            <span class="detail-label">When</span>
+            <strong>Saturday, June 15</strong>
+            <span>4:00 PM onwards</span>
+          </div>
+          <div>
+            <span class="detail-label">Where</span>
+            <strong>The Garden Room</strong>
+            <span>123 Celebration Lane</span>
+          </div>
+        </div>
+        <p class="rsvp-note">Come dressed for joy. RSVP by June 1.</p>
+        <button id="rsvp-button" class="rsvp-button" type="button">Count me in</button>
+      </div>
+    </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
   </body>

@@ -1,12 +1,12 @@
 #envelope {
   position: relative;
-  width: 360px;
-  height: 230px;
+  width: 440px;
+  height: 280px;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
   margin-left: auto;
   margin-right: auto;
-  top: 210px;
+  top: 0;
   background-color: #d9534f; /* Warm romantic red */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
@@ -19,21 +19,21 @@
 }
 
 .flap {
-  border-left: 180px solid transparent;
-  border-right: 180px solid transparent;
-  border-bottom: 105px solid transparent;
+  border-left: 220px solid transparent;
+  border-right: 220px solid transparent;
+  border-bottom: 128px solid transparent;
   /* a little smaller */
-  border-top: 125px solid #d9534f; /* Same romantic red */
+  border-top: 153px solid #d9534f; /* Same romantic red */
   /* a little larger */
   transform-origin: top;
   pointer-events: none;
 }
 
 .pocket {
-  border-left: 180px solid #f5a3a2; /* Soft pinkish red for the pocket */
-  border-right: 180px solid #f5a3a2;
-  border-bottom: 115px solid #ff6f61; /* Lighter romantic red */
-  border-top: 115px solid transparent;
+  border-left: 220px solid #f5a3a2; /* Soft pinkish red for the pocket */
+  border-right: 220px solid #f5a3a2;
+  border-bottom: 140px solid #ff6f61; /* Lighter romantic red */
+  border-top: 140px solid transparent;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
 }
@@ -113,14 +113,14 @@
 }
 
 .open .letter {
-  transform: translateY(-155px);
+  transform: translateY(-190px);
   transition: transform 0.4s 0.6s ease, z-index 0.6s;
   z-index: 2;
 }
 
 .hearts {
   position: absolute;
-  top: 90px;
+  top: 110px;
   left: 0;
   right: 0;
   z-index: 2;
@@ -256,10 +256,16 @@
 }
 body {
   background-color: #f0e6f6; /* Soft lavender for a romantic, dreamy feel */
+  margin: 0;
+  min-height: 100vh;
 }
 
-.envlope-wrapper {
-  height: 440px;
+.envelope-wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(40px);
 }
 
 .reset {
@@ -290,4 +296,179 @@ body {
 .reset button:hover {
   background-color: #d9534f;
   color: #fff;
+}
+
+body {
+  overflow-x: hidden;
+  color: #3d3040;
+  background-color: #f8e9d6;
+  background-image: radial-gradient(#e9b872 1px, transparent 1px), radial-gradient(#f2a69b 1px, transparent 1px);
+  background-position: 0 0, 18px 22px;
+  background-size: 36px 44px;
+}
+
+.envelope-wrapper {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.7s ease, transform 0.8s ease;
+}
+
+#envelope {
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#envelope:hover,
+#envelope:focus-visible {
+  transform: translateY(-8px) rotate(-1deg);
+  box-shadow: 0 16px 30px rgba(114, 61, 50, 0.28);
+  outline: none;
+}
+
+#envelope.open {
+  cursor: default;
+}
+
+.open .flap,
+.open .letter {
+  transition-duration: 0.65s;
+}
+
+.invitation {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 8rem 1.5rem;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(30px);
+  pointer-events: none;
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.invitation.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.invitation-card {
+  position: relative;
+  width: min(100%, 760px);
+  padding: clamp(2.5rem, 7vw, 6rem);
+  box-sizing: border-box;
+  text-align: center;
+  background: #fffaf0;
+  border: 1px solid rgba(217, 83, 79, 0.25);
+  box-shadow: 12px 12px 0 #e9b872, 24px 24px 0 rgba(217, 83, 79, 0.16);
+}
+
+.eyebrow,
+.detail-label {
+  color: #d9534f;
+  font-family: Georgia, serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  margin: 0 0 1.25rem;
+}
+
+.invitation-card h1 {
+  margin: 0;
+  color: #3d3040;
+  font-family: Georgia, serif;
+  font-size: clamp(3.2rem, 9vw, 7rem);
+  font-weight: 400;
+  line-height: 0.9;
+}
+
+.invitation-card h1 span {
+  color: #d9534f;
+  font-style: italic;
+}
+
+.invitation-intro {
+  max-width: 34rem;
+  margin: 2rem auto;
+  font-family: Georgia, serif;
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.event-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 2.5rem 0;
+  padding: 1.5rem 0;
+  border-top: 1px solid #e9b872;
+  border-bottom: 1px solid #e9b872;
+  font-family: Georgia, serif;
+}
+
+.event-details div {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.event-details strong {
+  font-size: 1.15rem;
+}
+
+.event-details span:not(.detail-label) {
+  color: #6d5c62;
+}
+
+.rsvp-note {
+  margin: 0 0 1.5rem;
+  font-family: Georgia, serif;
+  font-style: italic;
+}
+
+.rsvp-button {
+  padding: 0.9rem 1.8rem;
+  border: 0;
+  border-radius: 999px;
+  color: #fffaf0;
+  background: #d9534f;
+  font: 700 0.8rem Georgia, serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.rsvp-button:hover,
+.rsvp-button:focus-visible {
+  background: #b83f3b;
+  transform: translateY(-2px);
+}
+
+.rsvp-button:disabled {
+  background: #35a7a0;
+  cursor: default;
+  transform: none;
+}
+
+@media (max-width: 600px) {
+  .envelope-wrapper {
+    transform: translateY(10px) scale(0.72);
+    transform-origin: center;
+  }
+
+  .invitation {
+    padding: 5rem 1rem;
+  }
+
+  .event-details {
+    grid-template-columns: 1fr;
+  }
+
+  .invitation-card {
+    box-shadow: 7px 7px 0 #e9b872, 14px 14px 0 rgba(217, 83, 79, 0.16);
+  }
 }
