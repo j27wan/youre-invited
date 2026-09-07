@@ -1,12 +1,12 @@
 #envelope {
   position: relative;
-  width: 280px;
-  height: 180px;
+  width: 360px;
+  height: 230px;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
   margin-left: auto;
   margin-right: auto;
-  top: 150px;
+  top: 210px;
   background-color: #d9534f; /* Warm romantic red */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
@@ -19,21 +19,21 @@
 }
 
 .flap {
-  border-left: 140px solid transparent;
-  border-right: 140px solid transparent;
-  border-bottom: 82px solid transparent;
+  border-left: 180px solid transparent;
+  border-right: 180px solid transparent;
+  border-bottom: 105px solid transparent;
   /* a little smaller */
-  border-top: 98px solid #d9534f; /* Same romantic red */
+  border-top: 125px solid #d9534f; /* Same romantic red */
   /* a little larger */
   transform-origin: top;
   pointer-events: none;
 }
 
 .pocket {
-  border-left: 140px solid #f5a3a2; /* Soft pinkish red for the pocket */
-  border-right: 140px solid #f5a3a2;
-  border-bottom: 90px solid #ff6f61; /* Lighter romantic red */
-  border-top: 90px solid transparent;
+  border-left: 180px solid #f5a3a2; /* Soft pinkish red for the pocket */
+  border-right: 180px solid #f5a3a2;
+  border-bottom: 115px solid #ff6f61; /* Lighter romantic red */
+  border-top: 115px solid transparent;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
 }
@@ -65,7 +65,7 @@
   left: 10%;
   width: 80%;
   height: 14%;
-  background-color: #ffe6e6; /* Light romantic tone */
+  background-color: transparent;
 }
 
 .words.line1 {
@@ -73,24 +73,24 @@
   font-size: 0.5rem;
   width: 20%;
   height: 7%;
-  font-size: 0.7rem;
+  font-size: 1rem;
 }
 
 .words.line2 {
   top: 30%;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1.45rem;
 }
 
 .words.line3 {
   top: 50%;
-  font-size: 1.1rem;
+  font-size: 1.45rem;
   text-align: center;
 }
 
 .words.line4 {
   top: 70%;
-  font-size: 1.1rem;
+  font-size: 1.45rem;
   text-align: center;
 }
 
@@ -113,7 +113,7 @@
 }
 
 .open .letter {
-  transform: translateY(-100px);
+  transform: translateY(-155px);
   transition: transform 0.4s 0.6s ease, z-index 0.6s;
   z-index: 2;
 }
@@ -126,44 +126,54 @@
   z-index: 2;
 }
 
-.heart {
+.confetti {
   position: absolute;
   bottom: 0;
-  right: 10%;
+  width: 10px;
+  height: 22px;
+  border-radius: 2px;
   pointer-events: none;
 }
 
-.heart:before,
-.heart:after {
-  position: absolute;
-  content: "";
-  left: 50px;
-  top: 0;
-  width: 50px;
-  height: 80px;
-  background: #e60073; /* Deep romantic pink */
-  border-radius: 50px 50px 0 0;
-  transform: rotate(-45deg);
-  transform-origin: 0 100%;
-  pointer-events: none;
+.confetti:nth-child(1) {
+  left: 20%;
+  background: #f4b942;
+  transform: rotate(18deg);
 }
 
-.heart:after {
-  left: 0;
-  transform: rotate(45deg);
-  transform-origin: 100% 100%;
+.confetti:nth-child(2) {
+  left: 55%;
+  background: #35a7a0;
+  transform: rotate(-22deg);
 }
 
-.close .heart {
+.confetti:nth-child(3) {
+  left: 10%;
+  background: #ed6a5a;
+  transform: rotate(35deg);
+}
+
+.confetti:nth-child(4) {
+  left: 72%;
+  background: #7b61a8;
+  transform: rotate(-12deg);
+}
+
+.confetti:nth-child(5) {
+  left: 38%;
+  background: #f28f3b;
+  transform: rotate(28deg);
+}
+
+.close .hearts .confetti {
   opacity: 0;
   -webkit-animation: none;
   animation: none;
 }
 
-.a1 {
-  left: 20%;
+.confetti.a1 {
   transform: scale(0.6);
-  opacity: 1;
+  opacity: 0;
   -webkit-animation: slideUp 4s linear 1, sideSway 2s ease-in-out 4 alternate;
   -moz-animation: slideUp 4s linear 1, sideSway 2s ease-in-out 4 alternate;
   -webkit-animation-fill-mode: forwards;
@@ -172,10 +182,9 @@
   animation-delay: 0.7s;
 }
 
-.a2 {
-  left: 55%;
+.confetti.a2 {
   transform: scale(1);
-  opacity: 1;
+  opacity: 0;
   -webkit-animation: slideUp 5s linear 1, sideSway 4s ease-in-out 2 alternate;
   -moz-animation: slideUp 5s linear 1, sideSway 4s ease-in-out 2 alternate;
   -webkit-animation-fill-mode: forwards;
@@ -184,10 +193,9 @@
   animation-delay: 0.7s;
 }
 
-.a3 {
-  left: 10%;
+.confetti.a3 {
   transform: scale(0.8);
-  opacity: 1;
+  opacity: 0;
   -webkit-animation: slideUp 7s linear 1, sideSway 2s ease-in-out 6 alternate;
   -moz-animation: slideUp 7s linear 1, sideSway 2s ease-in-out 6 alternate;
   -webkit-animation-fill-mode: forwards;
@@ -196,20 +204,38 @@
   animation-delay: 0.7s;
 }
 
+.confetti.a4,
+.confetti.a5 {
+  opacity: 0;
+  animation: slideUp 6s linear 1, sideSway 3s ease-in-out 4 alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 0.7s;
+}
+
 @-webkit-keyframes slideUp {
   0% {
     top: 0;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
   }
   100% {
     top: -600px;
+    opacity: 0;
   }
 }
 @keyframes slideUp {
   0% {
     top: 0;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
   }
   100% {
     top: -600px;
+    opacity: 0;
   }
 }
 @-webkit-keyframes sideSway {
@@ -233,11 +259,12 @@ body {
 }
 
 .envlope-wrapper {
-  height: 380px;
+  height: 440px;
 }
 
 .reset {
   text-align: center;
+  margin-top: 35px;
 }
 
 .reset button {
