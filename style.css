@@ -232,6 +232,7 @@ body {
 }
 
 .envelope-wrapper {
+  max-width: 100vw;
   position: relative;
   z-index: 2;
   transition: opacity 0.7s ease, transform 0.8s ease;
@@ -284,11 +285,32 @@ body {
   pointer-events: auto;
 }
 
-.invitation-image {
+.invitation-zoom {
   display: block;
   width: min(100%, 620px);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.invitation-image {
+  display: block;
+  width: 100%;
   height: auto;
   box-shadow: 12px 12px 0 rgba(217, 83, 79, 0.16);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.invitation-zoom:hover .invitation-image,
+.invitation-zoom:focus-visible .invitation-image {
+  transform: translateY(-4px);
+  box-shadow: 14px 16px 0 rgba(217, 83, 79, 0.2);
+}
+
+.invitation-zoom:focus-visible {
+  outline: 3px solid #d96b8a;
+  outline-offset: 7px;
 }
 
 .invitation-actions {
@@ -409,9 +431,50 @@ body {
   }
 }
 
+.image-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  background: rgba(61, 48, 64, 0.82);
+}
+
+.image-modal[hidden] {
+  display: none;
+}
+
+.image-modal img {
+  display: block;
+  max-width: min(92vw, 760px);
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
+}
+
+.image-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid #fff8f5;
+  color: #fff8f5;
+  background: transparent;
+  font: 700 0.75rem Georgia, serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
 @media (max-width: 600px) {
   .envelope-wrapper {
-    transform: translateY(10px) scale(0.72);
+    transform: translateY(10px) scale(min(0.72, calc((100vw - 2rem) / 440)));
     transform-origin: center;
   }
 
@@ -419,7 +482,22 @@ body {
     padding: 5rem 1rem;
   }
 
+  .invitation-zoom {
+    width: 100%;
+  }
+
   .invitation-image {
     box-shadow: 7px 7px 0 rgba(217, 83, 79, 0.16);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }
