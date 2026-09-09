@@ -375,7 +375,13 @@ body {
 .invitation-actions {
   display: grid;
   justify-items: center;
-  gap: 1.75rem;
+  gap: 2.5rem;
+}
+
+.rsvp-control {
+  display: grid;
+  justify-items: center;
+  gap: 0.15rem;
 }
 
 .rsvp-link {
@@ -400,12 +406,48 @@ body {
   outline-offset: 5px;
 }
 
+.rsvp-label {
+  color: #a94065;
+  font-family: "Carattere", cursive;
+  font-size: 1.25rem;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.rsvp-link:hover + .rsvp-label,
+.rsvp-link:focus-visible + .rsvp-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .spotify-link {
   display: block;
   width: 120px;
   border-radius: 50%;
   box-shadow: 0 8px 18px rgba(117, 63, 78, 0.2);
   transition: box-shadow 0.2s ease;
+}
+
+.spotify-control {
+  display: grid;
+  justify-items: center;
+  gap: 0.15rem;
+}
+
+.spotify-label {
+  color: #a94065;
+  font-family: "Carattere", cursive;
+  font-size: 1.25rem;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.spotify-control:hover .spotify-label,
+.spotify-control:focus-within .spotify-label {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .spotify-link img {
