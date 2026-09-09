@@ -22,9 +22,7 @@
   border-left: 220px solid transparent;
   border-right: 220px solid transparent;
   border-bottom: 128px solid transparent;
-  /* a little smaller */
   border-top: 153px solid #efb8c8;
-  /* a little larger */
   transform-origin: top;
   pointer-events: none;
 }
@@ -73,14 +71,6 @@
   background-color: transparent;
 }
 
-.words.line1 {
-  top: 10%;
-  font-size: 0.5rem;
-  width: 20%;
-  height: 7%;
-  font-size: 1rem;
-}
-
 .words.line2 {
   top: 30%;
   text-align: center;
@@ -90,12 +80,6 @@
 .words.line3 {
   top: 50%;
   font-size: 1.8rem;
-  text-align: center;
-}
-
-.words.line4 {
-  top: 70%;
-  font-size: 1.45rem;
   text-align: center;
 }
 
@@ -123,7 +107,7 @@
   z-index: 2;
 }
 
-.hearts {
+.confetti-container {
   position: absolute;
   top: 110px;
   left: 0;
@@ -170,42 +154,32 @@
   transform: rotate(28deg);
 }
 
-.close .hearts .confetti {
+.close .confetti-container .confetti {
   opacity: 0;
-  -webkit-animation: none;
   animation: none;
 }
 
 .confetti.a1 {
   transform: scale(0.6);
   opacity: 0;
-  -webkit-animation: slideUp 4s linear 1, sideSway 2s ease-in-out 4 alternate;
-  -moz-animation: slideUp 4s linear 1, sideSway 2s ease-in-out 4 alternate;
-  -webkit-animation-fill-mode: forwards;
+  animation: slideUp 4s linear 1, sideSway 2s ease-in-out 4 alternate;
   animation-fill-mode: forwards;
-  -webkit-animation-delay: 0.7s;
   animation-delay: 0.7s;
 }
 
 .confetti.a2 {
   transform: scale(1);
   opacity: 0;
-  -webkit-animation: slideUp 5s linear 1, sideSway 4s ease-in-out 2 alternate;
-  -moz-animation: slideUp 5s linear 1, sideSway 4s ease-in-out 2 alternate;
-  -webkit-animation-fill-mode: forwards;
+  animation: slideUp 5s linear 1, sideSway 4s ease-in-out 2 alternate;
   animation-fill-mode: forwards;
-  -webkit-animation-delay: 0.7s;
   animation-delay: 0.7s;
 }
 
 .confetti.a3 {
   transform: scale(0.8);
   opacity: 0;
-  -webkit-animation: slideUp 7s linear 1, sideSway 2s ease-in-out 6 alternate;
-  -moz-animation: slideUp 7s linear 1, sideSway 2s ease-in-out 6 alternate;
-  -webkit-animation-fill-mode: forwards;
+  animation: slideUp 7s linear 1, sideSway 2s ease-in-out 6 alternate;
   animation-fill-mode: forwards;
-  -webkit-animation-delay: 0.7s;
   animation-delay: 0.7s;
 }
 
@@ -217,19 +191,6 @@
   animation-delay: 0.7s;
 }
 
-@-webkit-keyframes slideUp {
-  0% {
-    top: 0;
-    opacity: 0;
-  }
-  5% {
-    opacity: 1;
-  }
-  100% {
-    top: -600px;
-    opacity: 0;
-  }
-}
 @keyframes slideUp {
   0% {
     top: 0;
@@ -243,14 +204,6 @@
     opacity: 0;
   }
 }
-@-webkit-keyframes sideSway {
-  0% {
-    margin-left: 0px;
-  }
-  100% {
-    margin-left: 50px;
-  }
-}
 @keyframes sideSway {
   0% {
     margin-left: 0px;
@@ -259,12 +212,6 @@
     margin-left: 50px;
   }
 }
-body {
-  background-color: #f0e6f6; /* Soft lavender for a romantic, dreamy feel */
-  margin: 0;
-  min-height: 100vh;
-}
-
 .envelope-wrapper {
   height: 100vh;
   display: flex;
@@ -273,39 +220,11 @@ body {
   transform: translateY(40px);
 }
 
-.reset {
-  text-align: center;
-  margin-top: 35px;
-}
-
-.reset button {
-  font-weight: 800;
-  font-style: normal;
-  transition: all 0.1s linear;
-  -webkit-appearance: none;
-  background-color: transparent;
-  border: solid 2px #d9534f;
-  border-radius: 4px;
-  color: #d9534f;
-  display: inline-block;
-  font-size: 14px;
-  text-transform: uppercase;
-  margin: 5px;
-  padding: 10px;
-  line-height: 1em;
-  text-decoration: none;
-  min-width: 120px;
-  cursor: pointer;
-}
-
-.reset button:hover {
-  background-color: #d9534f;
-  color: #fff;
-}
-
 body {
   overflow-x: hidden;
   color: #3d3040;
+  margin: 0;
+  min-height: 100vh;
   background-color: #f8dfe8;
   background-image: radial-gradient(#e9aabd 1px, transparent 1px), radial-gradient(#f3bfcf 1px, transparent 1px);
   background-position: 0 0, 18px 22px;
@@ -386,24 +305,30 @@ body {
 
 .rsvp-link {
   display: block;
-  width: 150px;
-  border-radius: 14px;
-  box-shadow: 0 8px 18px rgba(117, 63, 78, 0.2);
-  transition: box-shadow 0.2s ease;
+  width: 120px;
+  height: 120px;
+  aspect-ratio: 1;
+  padding: 3px;
+  box-sizing: border-box;
+  background: #d96b8a;
+  border-radius: 50%;
+  filter: drop-shadow(0 8px 18px rgba(117, 63, 78, 0.2));
+  transition: filter 0.2s ease;
 }
 
 .rsvp-link img {
   display: block;
   width: 100%;
-  height: auto;
-  border-radius: inherit;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .rsvp-link:hover,
 .rsvp-link:focus-visible {
   animation: rsvpShake 0.45s ease-in-out;
-  outline: 3px solid #d96b8a;
-  outline-offset: 5px;
+  filter: drop-shadow(0 0 0 #d96b8a) drop-shadow(0 0 8px #d96b8a);
+  outline: none;
 }
 
 .rsvp-label {
