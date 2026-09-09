@@ -1,7 +1,7 @@
 #envelope {
   position: relative;
-  width: 440px;
-  height: 280px;
+  width: 520px;
+  height: 330px;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
   margin-left: auto;
@@ -19,19 +19,19 @@
 }
 
 .flap {
-  border-left: 220px solid transparent;
-  border-right: 220px solid transparent;
-  border-bottom: 128px solid transparent;
-  border-top: 153px solid #efb8c8;
+  border-left: 260px solid transparent;
+  border-right: 260px solid transparent;
+  border-bottom: 151px solid transparent;
+  border-top: 181px solid #efb8c8;
   transform-origin: top;
   pointer-events: none;
 }
 
 .pocket {
-  border-left: 220px solid #dfa0b3;
-  border-right: 220px solid #dfa0b3;
-  border-bottom: 140px solid #cf829b;
-  border-top: 140px solid transparent;
+  border-left: 260px solid #dfa0b3;
+  border-right: 260px solid #dfa0b3;
+  border-bottom: 165px solid #cf829b;
+  border-top: 165px solid transparent;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
 }
@@ -74,12 +74,12 @@
 .words.line2 {
   top: 30%;
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 2.1rem;
 }
 
 .words.line3 {
   top: 50%;
-  font-size: 1.8rem;
+  font-size: 2.1rem;
   text-align: center;
 }
 
@@ -102,14 +102,14 @@
 }
 
 .open .letter {
-  transform: translateY(-190px);
+  transform: translateY(-225px);
   transition: transform 0.4s 0.6s ease, z-index 0.6s;
   z-index: 2;
 }
 
 .confetti-container {
   position: absolute;
-  top: 110px;
+  top: 130px;
   left: 0;
   right: 0;
   z-index: 2;
@@ -118,39 +118,39 @@
 .confetti {
   position: absolute;
   bottom: 0;
-  width: 10px;
-  height: 22px;
+  width: 12px;
+  height: 26px;
   border-radius: 2px;
   pointer-events: none;
 }
 
 .confetti:nth-child(1) {
   left: 20%;
-  background: #f4b942;
+  background: #f6c1d0;
   transform: rotate(18deg);
 }
 
 .confetti:nth-child(2) {
   left: 55%;
-  background: #35a7a0;
+  background: #d96b8a;
   transform: rotate(-22deg);
 }
 
 .confetti:nth-child(3) {
   left: 10%;
-  background: #ed6a5a;
+  background: #f09ab2;
   transform: rotate(35deg);
 }
 
 .confetti:nth-child(4) {
   left: 72%;
-  background: #7b61a8;
+  background: #b94d70;
   transform: rotate(-12deg);
 }
 
 .confetti:nth-child(5) {
   left: 38%;
-  background: #f28f3b;
+  background: #f7d7df;
   transform: rotate(28deg);
 }
 
@@ -474,7 +474,7 @@ body {
 
 @media (max-width: 600px) {
   .envelope-wrapper {
-    transform: translateY(10px) scale(min(0.72, calc((100vw - 2rem) / 440)));
+    transform: translateY(10px) scale(min(0.72, calc((100vw - 1rem) / 520)));
     transform-origin: center;
   }
 
