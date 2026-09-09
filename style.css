@@ -272,10 +272,10 @@ body {
 
 .invitation-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 150px;
-  align-items: center;
+  grid-template-columns: 1fr;
+  justify-items: center;
   gap: 2.5rem;
-  width: min(100%, 1080px);
+  width: min(100%, 760px);
 }
 
 .invitation.is-visible {
@@ -286,14 +286,15 @@ body {
 
 .invitation-image {
   display: block;
-  width: 100%;
+  width: min(100%, 620px);
   height: auto;
   box-shadow: 12px 12px 0 rgba(217, 83, 79, 0.16);
 }
 
 .invitation-actions {
-  display: grid;
-  justify-items: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
   gap: 2.5rem;
 }
 
@@ -418,16 +419,7 @@ body {
     padding: 5rem 1rem;
   }
 
-  .invitation-layout {
-    grid-template-columns: 1fr;
-    justify-items: center;
-  }
-
   .invitation-image {
     box-shadow: 7px 7px 0 rgba(217, 83, 79, 0.16);
-  }
-
-  .rsvp-link {
-    width: 130px;
   }
 }

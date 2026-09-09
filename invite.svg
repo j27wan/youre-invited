@@ -1,12 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title description">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1100" role="img" aria-labelledby="title description">
   <title id="title">Invitation image placeholder</title>
   <desc id="description">Replace this placeholder with the final birthday invitation image.</desc>
-  <rect width="1200" height="900" fill="#fff8f5"/>
-  <rect x="34" y="34" width="1132" height="832" rx="20" fill="none" stroke="#e7a0b4" stroke-width="4"/>
-  <circle cx="180" cy="150" r="70" fill="#f6c1d0"/>
-  <circle cx="1020" cy="740" r="90" fill="#f3bfcf"/>
-  <path d="M80 760 C260 610 360 820 520 680 S820 570 1120 160" fill="none" stroke="#e7a0b4" stroke-width="8" stroke-linecap="round"/>
-  <text x="600" y="390" text-anchor="middle" fill="#a94065" font-family="Georgia, serif" font-size="54" letter-spacing="8">YOUR INVITE</text>
-  <text x="600" y="470" text-anchor="middle" fill="#6d5c62" font-family="Georgia, serif" font-size="28">Replace invite.svg with your final invitation image</text>
-  <text x="600" y="535" text-anchor="middle" fill="#d96b8a" font-family="Georgia, serif" font-size="24">The envelope reveal is ready.</text>
+  <rect width="800" height="1100" fill="#fff8f5"/>
+  <rect x="28" y="28" width="744" height="1044" rx="20" fill="none" stroke="#e7a0b4" stroke-width="4"/>
+  <circle cx="130" cy="150" r="62" fill="#f6c1d0"/>
+  <circle cx="675" cy="950" r="78" fill="#f3bfcf"/>
+  <path d="M65 970 C180 810 250 1020 365 875 S550 700 735 155" fill="none" stroke="#e7a0b4" stroke-width="8" stroke-linecap="round"/>
+  <text x="400" y="440" text-anchor="middle" fill="#a94065" font-family="Georgia, serif" font-size="52" letter-spacing="8">YOUR INVITE</text>
+  <text x="400" y="535" text-anchor="middle" fill="#6d5c62" font-family="Georgia, serif" font-size="27">Replace invite.svg with your final</text>
+  <text x="400" y="580" text-anchor="middle" fill="#6d5c62" font-family="Georgia, serif" font-size="27">portrait invitation image</text>
+  <text x="400" y="660" text-anchor="middle" fill="#d96b8a" font-family="Georgia, serif" font-size="24">The envelope reveal is ready.</text>
 </svg>
