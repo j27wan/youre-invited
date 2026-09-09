@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Carattere&display=swap"
       rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -16,8 +16,8 @@
         <div class="front flap"></div>
         <div class="front pocket"></div>
         <div class="letter">
-          <div class="words line2">You're invited...</div>
-          <!-- <div class="words line3">to celebrate my 30th birthday!</div> -->
+          <div class="words line2">Dear Guest,</div>
+          <div class="words line3">You're invited to celebrate...</div>
         </div>
         <div class="hearts">
           <div class="confetti a1"></div>
@@ -29,24 +29,16 @@
       </div>
     </div>
     <main id="invitation" class="invitation" aria-hidden="true">
-      <div class="invitation-card">
-        <p class="eyebrow">Save the date</p>
-        <h1>Birthday<br /><span>celebration</span></h1>
-        <p class="invitation-intro">A little party, a lot of cake, and the people who make life worth celebrating.</p>
-        <div class="event-details">
-          <div>
-            <span class="detail-label">When</span>
-            <strong>Saturday, June 15</strong>
-            <span>4:00 PM onwards</span>
-          </div>
-          <div>
-            <span class="detail-label">Where</span>
-            <strong>The Garden Room</strong>
-            <span>123 Celebration Lane</span>
-          </div>
+      <div class="invitation-layout">
+        <img class="invitation-image" src="invite.svg" alt="Birthday party invitation" />
+        <div class="invitation-actions">
+          <a class="rsvp-link" href="https://partiful.com/events/" aria-label="Go to the RSVP page">
+            <img src="rsvp.jpeg" alt="RSVP" />
+          </a>
+          <a class="spotify-link" href="https://open.spotify.com/" aria-label="Open the Spotify playlist">
+            <img src="vinyl.svg" alt="Spotify playlist" />
+          </a>
         </div>
-        <p class="rsvp-note">Come dressed for joy. RSVP by June 1.</p>
-        <button id="rsvp-button" class="rsvp-button" type="button">Count me in</button>
       </div>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
