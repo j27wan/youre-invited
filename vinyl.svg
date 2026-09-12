@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="title description">
+  <title id="title">White double eighth note playlist placeholder</title>
+  <desc id="description">A pink vinyl record with a white double eighth note, linking to a playlist.</desc>
+  <circle cx="200" cy="200" r="190" fill="#241c29"/>
+  <circle cx="200" cy="200" r="172" fill="none" stroke="#51404f" stroke-width="5"/>
+  <circle cx="200" cy="200" r="145" fill="none" stroke="#51404f" stroke-width="3"/>
+  <circle cx="200" cy="200" r="116" fill="none" stroke="#51404f" stroke-width="3"/>
+  <circle cx="200" cy="200" r="82" fill="#e7a0b4"/>
+  <circle cx="200" cy="200" r="28" fill="#241c29"/>
+  <circle cx="200" cy="200" r="10" fill="#a94065"/>
+  <g transform="translate(94 80) scale(0.65)">
+    <path d="M100 105l150-27v30l-130 25v110h-24V105z" fill="#fff"/>
+    <path d="M228 92h22v130h-22z" fill="#fff"/>
+    <ellipse cx="85" cy="252" rx="40" ry="27" fill="#fff" transform="rotate(-10 85 252)"/>
+    <ellipse cx="212" cy="227" rx="40" ry="27" fill="#fff" transform="rotate(-10 212 227)"/>
+  </g>
+</svg>
