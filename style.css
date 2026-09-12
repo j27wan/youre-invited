@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Silk Factory";
+  src: url("fonts/SilkFactory-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 #envelope {
   position: relative;
   width: 520px;
@@ -7,7 +14,7 @@
   margin-left: auto;
   margin-right: auto;
   top: 0;
-  background-color: #e7a0b4;
+  background-color: #c44755;
   box-shadow: 0 4px 20px rgba(117, 63, 78, 0.24);
 }
 
@@ -22,15 +29,15 @@
   border-left: 260px solid transparent;
   border-right: 260px solid transparent;
   border-bottom: 151px solid transparent;
-  border-top: 181px solid #efb8c8;
+  border-top: 181px solid #df6973;
   transform-origin: top;
   pointer-events: none;
 }
 
 .pocket {
-  border-left: 260px solid #dfa0b3;
-  border-right: 260px solid #dfa0b3;
-  border-bottom: 165px solid #cf829b;
+  border-left: 260px solid #b52f42;
+  border-right: 260px solid #b52f42;
+  border-bottom: 165px solid #a11c2d;
   border-top: 165px solid transparent;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
@@ -45,7 +52,7 @@
   height: 90%;
   top: 5%;
   border-radius: 6px;
-  border: 2px solid #d96b8a;
+  border: 2px solid #c94f5b;
   box-sizing: border-box;
   box-shadow: 0 2px 26px rgba(0, 0, 0, 0.12);
   font-family: "Carattere", cursive;
@@ -58,7 +65,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  border: 1px solid #efb8c8;
+  border: 1px solid #e56f78;
   border-radius: 3px;
   inset: 8px;
 }
@@ -71,16 +78,10 @@
   background-color: transparent;
 }
 
-.words.line2 {
-  top: 30%;
+.words.line {
+  top: 40%;
   text-align: center;
-  font-size: 2.1rem;
-}
-
-.words.line3 {
-  top: 50%;
-  font-size: 2.1rem;
-  text-align: center;
+  font-size: 2.7rem;
 }
 
 .open .flap {
@@ -126,31 +127,31 @@
 
 .confetti:nth-child(1) {
   left: 20%;
-  background: #f6c1d0;
+  background: #ffd6e0;
   transform: rotate(18deg);
 }
 
 .confetti:nth-child(2) {
   left: 55%;
-  background: #d96b8a;
+  background: #f5b6c6;
   transform: rotate(-22deg);
 }
 
 .confetti:nth-child(3) {
   left: 10%;
-  background: #f09ab2;
+  background: #ffc4d2;
   transform: rotate(35deg);
 }
 
 .confetti:nth-child(4) {
   left: 72%;
-  background: #b94d70;
+  background: #eea1b5;
   transform: rotate(-12deg);
 }
 
 .confetti:nth-child(5) {
   left: 38%;
-  background: #f7d7df;
+  background: #ffe5eb;
   transform: rotate(28deg);
 }
 
@@ -225,7 +226,7 @@ body {
   color: #3d3040;
   margin: 0;
   min-height: 100vh;
-  background-color: #f8dfe8;
+  background-color: #f2dbae;
   background-image: radial-gradient(#e9aabd 1px, transparent 1px), radial-gradient(#f3bfcf 1px, transparent 1px);
   background-position: 0 0, 18px 22px;
   background-size: 36px 44px;
@@ -275,7 +276,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
-  gap: 2.5rem;
+  gap: 2rem;
   width: min(100%, 760px);
 }
 
@@ -315,26 +316,20 @@ body {
 
 .invitation-actions {
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
   justify-content: center;
-  gap: 2.5rem;
+  gap: 2rem;
 }
 
 .rsvp-control {
   display: grid;
   justify-items: center;
-  gap: 0.15rem;
+  gap: 0.35rem;
 }
 
 .rsvp-link {
   display: block;
-  width: 120px;
-  height: 120px;
-  aspect-ratio: 1;
-  padding: 3px;
-  box-sizing: border-box;
-  background: #d96b8a;
-  border-radius: 50%;
+  width: 110px;
   filter: drop-shadow(0 8px 18px rgba(117, 63, 78, 0.2));
   transition: filter 0.2s ease;
 }
@@ -342,36 +337,24 @@ body {
 .rsvp-link img {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
+  height: auto;
 }
 
 .rsvp-link:hover,
 .rsvp-link:focus-visible {
   animation: rsvpShake 0.45s ease-in-out;
-  filter: drop-shadow(0 0 0 #d96b8a) drop-shadow(0 0 8px #d96b8a);
   outline: none;
 }
 
 .rsvp-label {
   color: #a94065;
-  font-family: "Carattere", cursive;
+  font-family: "Silk Factory", cursive;
   font-size: 1.25rem;
-  opacity: 0;
-  transform: translateY(-4px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.rsvp-link:hover + .rsvp-label,
-.rsvp-link:focus-visible + .rsvp-label {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .spotify-link {
   display: block;
-  width: 120px;
+  width: 110px;
   border-radius: 50%;
   box-shadow: 0 8px 18px rgba(117, 63, 78, 0.2);
   transition: box-shadow 0.2s ease;
@@ -380,22 +363,13 @@ body {
 .spotify-control {
   display: grid;
   justify-items: center;
-  gap: 0.15rem;
+  gap: 0.35rem;
 }
 
 .spotify-label {
   color: #a94065;
-  font-family: "Carattere", cursive;
+  font-family: "Silk Factory", cursive;
   font-size: 1.25rem;
-  opacity: 0;
-  transform: translateY(-4px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.spotify-control:hover .spotify-label,
-.spotify-control:focus-within .spotify-label {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .spotify-link img {
@@ -408,8 +382,38 @@ body {
 .spotify-link:hover,
 .spotify-link:focus-visible {
   animation: recordSpin 1.2s linear infinite;
-  outline: 3px solid #d96b8a;
-  outline-offset: 5px;
+  outline: none;
+}
+
+.venue-control {
+  display: grid;
+  justify-items: center;
+  gap: 0.35rem;
+}
+
+.venue-link {
+  display: block;
+  width: 110px;
+  text-decoration: none;
+  filter: drop-shadow(0 8px 18px rgba(117, 63, 78, 0.2));
+}
+
+.venue-link img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.venue-link:hover,
+.venue-link:focus-visible {
+  animation: rsvpShake 0.45s ease-in-out;
+  outline: none;
+}
+
+.venue-label {
+  color: #a94065;
+  font-family: "Silk Factory", cursive;
+  font-size: 1.25rem;
 }
 
 @keyframes recordSpin {
@@ -489,6 +493,17 @@ body {
   .invitation-image {
     box-shadow: 7px 7px 0 rgba(217, 83, 79, 0.16);
   }
+
+  .invitation-actions {
+    gap: 1rem;
+  }
+
+  .rsvp-link,
+  .spotify-link,
+  .venue-link {
+    width: 84px;
+  }
+
 }
 
 @media (prefers-reduced-motion: reduce) {
